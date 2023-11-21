@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Website page-Easy Tutorials</title>
+
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            width: auto;
+        }
+        .container{
+            width: 100%;
+            min-height: 100vh;
+            padding-left: 8%;
+            padding-right: 8%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .navbar{
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .logo{
+            width: 50px;
+            cursor: pointer;
+            margin: 30px 0px;
+        }
+        .menu{
+            width: 25px;
+            cursor: pointer;
+            display: none;
+        }
+        nav{
+            flex: 1;
+            text-align: right;
+        }
+        nav ul li{
+            list-style: none;
+            display: inline-block;
+            margin-right: 30px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+        }
+        nav ul li a:hover{
+            color: rgb(82, 213, 253);
+        }
+        .row{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 100px 0;
+        }
+        .col-1{
+            flex-basis: 40%;
+            position: relative;
+            margin-left: 10px;
+        }
+        .col-1 h2{
+            font-size: 54px;
+        }
+        .col-1 h3{
+            font-size: 30px;
+            color: #707070;
+            font-weight: 100;
+            margin: 20px 0 10px;
+        }
+        .col-1 p{
+            font-size: 16px;
+            color: #b7b7b7;
+            font-weight: 100;
+        }
+        .col-1 h4{
+            margin: 30px 0;
+            font-size: 20px;
+        }
+        button{
+            width: 140px;
+            border: 0;
+            padding: 12px 10px;
+            outline: none;
+            background: linear-gradient(to right, #2583c2, #a1f1fc);
+            transition: width 0.5s;
+        
+        }
+        button img{
+            display: none;
+            width: 15px;
+        }
+        button:hover img{
+            display: block;
+        }
+        button:hover{
+            width: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .col-1::after{
+            content: '';
+            width: 10px;
+            height: 57%;
+            background: linear-gradient(to right, #2583c2, #a1f1fc);
+            position: absolute;
+            left: -40px;
+            top: 8px;
+
+        }
+        .col-2{
+            position: relative;
+            flex-basis: 60%;
+            display: flex;
+            align-items: center;
+        }
+        
+        .color-box{
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(#5495e4,#9fcdfc);
+            border-radius: 20px 0 0 20px;
+            height: 100%;
+            width: 80%;
+            z-index: -1;
+            transform: translateX(150px);
+        }
+        .add-btn img{
+           width: 35px;
+           margin-bottom: 5px;
+           margin-left: 25px;
+        }
+        .add-btn p{
+            margin-left: 15px;
+        }
+        .add-btn{
+            text-align: center;
+            color: white;
+            cursor: pointer;
+        }
+        
+        @keyframes pr{
+            0%{
+                background-color: #2583c2;
+                padding: 10px 36px;
+                color: black;
+                font-size: 26px;
+            }
+            20%{
+                background-color: rgb(141, 9, 124);
+                color: white;
+                padding: 15px 38px;
+            }
+            50%{
+                background-color: green;
+                color: white;
+                padding: 18px 45px;
+                font-size: 34px;
+            }
+            75%{
+                background-color: rgb(127, 58, 9);
+                color: #9fcdfc;
+                font-size: 28px;
+                padding: 10px 30px;
+            }
+            100%{
+                background-color: rgb(183, 217, 246);
+                color:black;
+            }
+        }
+         @media screen and (max-width:600px) {
+            nav ul{
+                width: 65%;
+                background: linear-gradient(#5495e4,#9fcdfc);
+                position: absolute;
+                top: 75px;
+                right: 0;
+                z-index: 2;
+            }
+            nav ul li{
+                display: block;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            nav ul li a{
+                color: #fff;
+            }
+            .menu{
+                display: block;
+            }
+            #menulist{
+                overflow: hidden;
+                transition: 0.5s;
+            }
+            .row{
+            
+            margin: 50px 0;
+            flex-direction: column-reverse;
+            padding-top: 100px;
+        }
+        .col2{
+            flex-basis: 100%;
+            margin-bottom: 50px;
+        }
+        .col2 .controller{
+            width: 40%;
+        }
+        .color-box{
+            transform: translateX(150px);
+        }
+        .col-1{
+            flex-basis: 100%;
+        }
+        .col-1 h2{
+            font-size: 35px;
+        }
+        .col-1 h3{
+            font-size: 15px;
+        }
+        button{
+            width: 100px;
+            border: 0;
+            padding: 2px 34px 2px 2px;
+            outline: none;
+            background: linear-gradient(to right, #2583c2, #a1f1fc);
+            transition: width 0.5s;
+        }
+        button img{
+            display: none;
+        
+        }
+        button:hover img{
+            display: block;
+            width: 10px;
+            
+        }
+        button:hover{
+            width: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4px 35px 4px 1px;
+        }
+        
+
+        }      
+        
+
+    </style>
+    <div class="container">
+        <div class="navbar">
+           <img class="logo" src="logo of header.png" alt="">
+           <nav>
+            <ul id="menulist">
+                <li><a href="">Game Controllers</a></li>
+                <li><a href="">VR Accessories</a></li>
+                <li><a href="">Media Remotes</a></li>
+                <li><a href="">Others</a></li>
+            </ul>
+           </nav>
+           <img class="menu" src="menu.png" alt="" onclick="togglemenu()">
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <h2>PS4 V2 <br>Dualshock 4</h2>
+                <h3>Wireless Controller for PlayStation </h3>
+                <p>(Compatible/Generic)</p>
+                <h4>$32.50</h4>
+                <button class="btn" type="button">Buy Now <img width="10%" src="arrow.png" alt=""></button>
+            </div>
+            <div class="col-2">
+                <img class="controller" src="game controller1.jpg" alt="">
+                <div class="color-box"></div>
+                <div class="add-btn">
+                    <img src="plus.png" alt="">
+                    <p><small>Add to Cart</small></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        var menulist = document.getElementById("menulist")
+        menulist.style.maxHeight = "0px";
+
+       function togglemenu(){
+        if(menulist.style.maxHeight == "0px")
+        {
+            menulist.style.maxHeight = "130px";
+        }
+        else
+        {
+            menulist.style.maxHeight = "0px"
+        }
+       }
+    </script>
+</body>
+</html>
